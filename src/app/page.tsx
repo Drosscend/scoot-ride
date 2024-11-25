@@ -5,7 +5,7 @@ import { Features } from "@/components/features";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
-import { Map } from "@/components/map";
+import { MapComponent } from "@/components/map";
 import { Stats } from "@/components/stats";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       <Features />
       <About />
       <Stats />
-      <Map />
+      <MapComponent />
       <FAQ />
       <Contact />
       <Footer />
