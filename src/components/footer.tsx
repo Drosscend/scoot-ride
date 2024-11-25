@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { Facebook, Twitter, Instagram } from 'lucide-react'
+import { FacebookIcon, InstagramIcon, TwitterIcon } from "lucide-react";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -13,10 +13,18 @@ export function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">{`Liens Rapides`}</h3>
             <ul className="space-y-2">
-              <li><Link href="#features" className="hover:text-primary transition-colors">{`Caractéristiques`}</Link></li>
-              <li><Link href="#about" className="hover:text-primary transition-colors">{`À propos`}</Link></li>
-              <li><Link href="#faq" className="hover:text-primary transition-colors">{`FAQ`}</Link></li>
-              <li><Link href="#contact" className="hover:text-primary transition-colors">{`Contact`}</Link></li>
+              <li>
+                <Link href="#features" className="hover:text-primary transition-colors">{`Caractéristiques`}</Link>
+              </li>
+              <li>
+                <Link href="#about" className="hover:text-primary transition-colors">{`À propos`}</Link>
+              </li>
+              <li>
+                <Link href="#faq" className="hover:text-primary transition-colors">{`FAQ`}</Link>
+              </li>
+              <li>
+                <Link href="#contact" className="hover:text-primary transition-colors">{`Contact`}</Link>
+              </li>
             </ul>
           </div>
           <div>
@@ -27,16 +35,22 @@ export function Footer() {
             <p>{`+33 5 12 34 56 78`}</p>
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Suivez-nous</h3>
+            <h3 className="mb-4 text-lg font-semibold">{`Suivez-nous`}</h3>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-primary transition-colors"><Facebook /></a>
-              <a href="#" className="hover:text-primary transition-colors"><Twitter /></a>
-              <a href="#" className="hover:text-primary transition-colors"><Instagram /></a>
+              <a href="#" className="hover:text-primary transition-colors">
+                <FacebookIcon />
+              </a>
+              <a href="#" className="hover:text-primary transition-colors">
+                <TwitterIcon />
+              </a>
+              <a href="#" className="hover:text-primary transition-colors">
+                <InstagramIcon />
+              </a>
             </div>
           </div>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 text-center text-sm">
-          <p>{`© 2024 Scoot'Ride. Tous droits réservés.`}</p>
+          <p>{`© 2023 Scoot'Ride. Tous droits réservés.`}</p>
           <div className="mt-2">
             <Link href="#" className="hover:text-primary transition-colors">{`Mentions légales`}</Link> |
             <Link href="#" className="hover:text-primary transition-colors">{`Politique de confidentialité`}</Link> |
@@ -45,6 +59,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
-

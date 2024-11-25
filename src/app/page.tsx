@@ -1,12 +1,12 @@
-import { Features } from "@/components/features";
-import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
-import { Stats } from "@/components/stats";
-import { Map } from "@/components/map";
-import { FAQ } from "@/components/faq";
 import { Contact } from "@/components/contact";
+import { FAQ } from "@/components/faq";
+import { Features } from "@/components/features";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { Hero } from "@/components/hero";
+import { Map } from "@/components/map";
+import { Stats } from "@/components/stats";
 
 export default function Home() {
   return (
@@ -21,6 +21,5 @@ export default function Home() {
       <Contact />
       <Footer />
     </main>
-  )
+  );
 }
-

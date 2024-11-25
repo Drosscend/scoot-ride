@@ -1,4 +1,6 @@
-import { Button } from "@/components/ui/button"
+import scoot from "@/assets/scoot.jpg";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export function About() {
   return (
@@ -6,7 +8,7 @@ export function About() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center md:flex-row">
           <div className="mb-8 md:mb-0 md:w-1/2">
-            <img src="/placeholder.svg?height=400&width=600" alt="Scooter électrique Scoot'Ride" className="rounded-lg shadow-md" />
+            <Image src={scoot} width={"600"} height={"400"} alt="Scooter électrique Scoot'Ride" placeholder="blur" className="rounded-lg shadow-md" />
           </div>
           <div className="md:w-1/2 md:pl-12">
             <h2 className="mb-4 text-3xl font-bold text-gray-800">{`À Propos de Scoot'Ride`}</h2>
@@ -25,6 +27,5 @@ export function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
