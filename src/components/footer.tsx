@@ -1,4 +1,4 @@
-import { FacebookIcon, InstagramIcon, TwitterIcon } from "lucide-react";
+import { SiFacebook, SiInstagram, SiX } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
 
 export function Footer() {
@@ -29,8 +29,8 @@ export function Footer() {
           </div>
           <div>
             <h3 className="mb-4 text-lg font-semibold">{`Contact`}</h3>
-            <p>{`123 Rue de la Mobilité`}</p>
-            <p>{`31000 Toulouse, France`}</p>
+            <p>{`5 allées Antonio Machado,`}</p>
+            <p>{`31100 Toulouse, France`}</p>
             <p>{`contact@scootride.fr`}</p>
             <p>{`+33 5 12 34 56 78`}</p>
           </div>
@@ -38,22 +38,22 @@ export function Footer() {
             <h3 className="mb-4 text-lg font-semibold">{`Suivez-nous`}</h3>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-primary transition-colors">
-                <FacebookIcon />
+                <SiFacebook />
               </a>
               <a href="#" className="hover:text-primary transition-colors">
-                <TwitterIcon />
+                <SiX />
               </a>
               <a href="#" className="hover:text-primary transition-colors">
-                <InstagramIcon />
+                <SiInstagram />
               </a>
             </div>
           </div>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 text-center text-sm">
-          <p>{`© 2023 Scoot'Ride. Tous droits réservés.`}</p>
+          <p>{`© 2024 Scoot'Ride. Tous droits réservés.`}</p>
           <div className="mt-2">
-            <Link href="#" className="hover:text-primary transition-colors">{`Mentions légales`}</Link> |
-            <Link href="#" className="hover:text-primary transition-colors">{`Politique de confidentialité`}</Link> |
+            <Link href="#" className="hover:text-primary transition-colors">{`Mentions légales`}</Link> |{" "}
+            <Link href="#" className="hover:text-primary transition-colors">{`Politique de confidentialité`}</Link> |{" "}
             <Link href="#" className="hover:text-primary transition-colors">{`CGU`}</Link>
           </div>
         </div>
