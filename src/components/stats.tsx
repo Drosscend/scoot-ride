@@ -20,7 +20,7 @@ export function Stats() {
         </motion.h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <StatCard icon={<UsersIcon className="text-primary size-8" />} title={`Usagers`} value={23_000} suffix="+" />
-          <StatCard icon={<BikeIcon className="text-primary size-8" />} title={`Stations`} value={5} suffix="+" />
+          <StatCard icon={<BikeIcon className="text-primary size-8" />} title={`Stations`} value={5} />
           <StatCard icon={<MapPinIcon className="text-primary size-8" />} title={`Communes Desservies`} value={40} suffix="+" />
         </div>
       </div>
