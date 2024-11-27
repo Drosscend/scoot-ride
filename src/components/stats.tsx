@@ -1,16 +1,28 @@
+"use client";
+
 import { BikeIcon, LeafIcon, MapPinIcon, UsersIcon } from "lucide-react";
+import { motion } from "motion/react";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function Stats() {
   return (
-    <section id="stats" className="flex min-h-screen items-center bg-gray-100 py-20">
+    <section id="stats" className="bg-gradient-to-br from-gray-100 to-gray-200 py-20">
       <div className="container mx-auto px-6">
-        <h2 className="mb-8 text-center text-3xl font-bold text-gray-800">{`Scoot'Ride en Chiffres`}</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-12 text-center text-4xl font-bold text-gray-800"
+        >
+          {`Scoot'Ride en Chiffres`}
+        </motion.h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <StatCard icon={<UsersIcon className="text-primary size-8" />} title={`Utilisateurs`} value={`10,000+`} />
-          <StatCard icon={<BikeIcon className="text-primary size-8" />} title={`Scooters`} value={`500+`} />
-          <StatCard icon={<MapPinIcon className="text-primary size-8" />} title={`Communes Desservies`} value={`50+`} />
-          <StatCard icon={<LeafIcon className="text-primary size-8" />} title={`Tonnes de CO2 Économisées`} value={`1,000+`} />
+          <StatCard icon={<UsersIcon className="text-primary size-8" />} title={`Utilisateurs`} value={10000} suffix="+" />
+          <StatCard icon={<BikeIcon className="text-primary size-8" />} title={`Scooters`} value={500} suffix="+" />
+          <StatCard icon={<MapPinIcon className="text-primary size-8" />} title={`Communes Desservies`} value={50} suffix="+" />
+          <StatCard icon={<LeafIcon className="text-primary size-8" />} title={`Tonnes de CO2 Économisées`} value={1000} suffix="+" />
         </div>
       </div>
     </section>
@@ -20,18 +32,53 @@ export function Stats() {
 type StatCardProps = {
   icon: React.ReactNode;
   title: string;
-  value: string;
+  value: number;
+  suffix?: string;
 };
-function StatCard({ icon, title, value }: StatCardProps) {
+
+function StatCard({ icon, title, value, suffix = "" }: StatCardProps) {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (inView) {
+      let start = 0;
+      const end = value;
+      const duration = 2000;
+      const increment = Math.ceil(end / (duration / 16));
+
+      const timer = setInterval(() => {
+        start += increment;
+        if (start > end) {
+          setCount(end);
+          clearInterval(timer);
+        } else {
+          setCount(start);
+        }
+      }, 16);
+
+      return () => clearInterval(timer);
+    }
+  }, [inView, value]);
+
   return (
-    <Card>
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium">{title}</CardTitle>
-        {icon}
-      </CardHeader>
-      <CardContent>
-        <div className="text-2xl font-bold">{value}</div>
-      </CardContent>
-    </Card>
+    <motion.div ref={ref} initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}>
+      <Card className="text-center transition-transform hover:scale-105">
+        <CardHeader className="flex flex-col items-center space-y-0 pb-2">
+          {icon}
+          <CardTitle className="text-sm font-medium">{title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="text-3xl font-bold">
+            {count}
+            {suffix}
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 }

@@ -3,7 +3,6 @@ import { Contact } from "@/components/contact";
 import { FAQ } from "@/components/faq";
 import { Features } from "@/components/features";
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { MapComponent as Map } from "@/components/map";
 import { Stats } from "@/components/stats";
@@ -11,7 +10,6 @@ import { Stats } from "@/components/stats";
 export default function Home() {
   return (
     <main className="bg-background min-h-screen">
-      <Header />
       <Hero />
       <Features />
       <About />
