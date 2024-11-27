@@ -15,12 +15,9 @@ export function Header() {
             {`Scoot'Ride`}
           </Link>
           <div className="hidden space-x-4 md:flex">
-            <NavLink href="#features">{`Caractéristiques`}</NavLink>
-            <NavLink href="#about">{`À propos`}</NavLink>
-            <NavLink href="#stats">{`Chiffres clés`}</NavLink>
-            <NavLink href="#map">{`Carte`}</NavLink>
-            <NavLink href="#faq">{`FAQ`}</NavLink>
-            <NavLink href="#contact">{`Contact`}</NavLink>
+            <NavLink href="/download">{`Télécharger l'application`}</NavLink>
+            <NavLink href="/planner">{`Planifier un trajet`}</NavLink>
+            <NavLink href="/rewards">{`Programme de fidélité`}</NavLink>
           </div>
           <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <XIcon /> : <MenuIcon />}
@@ -29,12 +26,15 @@ export function Header() {
       </nav>
       {isMenuOpen && (
         <div className="md:hidden">
-          <NavLink href="#features" mobile>{`Caractéristiques`}</NavLink>
-          <NavLink href="#about" mobile>{`À propos`}</NavLink>
-          <NavLink href="#stats" mobile>{`Chiffres clés`}</NavLink>
-          <NavLink href="#map" mobile>{`Carte`}</NavLink>
-          <NavLink href="#faq" mobile>{`FAQ`}</NavLink>
-          <NavLink href="#contact" mobile>{`Contact`}</NavLink>
+          <NavLink href="/download" mobile>
+            {`Télécharger l'application`}
+          </NavLink>
+          <NavLink href="/planner" mobile>
+            {`Planifier un trajet`}
+          </NavLink>
+          <NavLink href="/rewards" mobile>
+            {`Programme de fidélité`}
+          </NavLink>
         </div>
       )}
     </header>
