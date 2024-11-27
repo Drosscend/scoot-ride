@@ -1,6 +1,6 @@
 "use client";
 
-import { BikeIcon, LeafIcon, MapPinIcon, UsersIcon } from "lucide-react";
+import { BikeIcon, MapPinIcon, UsersIcon } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
@@ -19,10 +19,9 @@ export function Stats() {
           {`Scoot'Ride en Chiffres`}
         </motion.h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <StatCard icon={<UsersIcon className="text-primary size-8" />} title={`Utilisateurs`} value={10000} suffix="+" />
-          <StatCard icon={<BikeIcon className="text-primary size-8" />} title={`Scooters`} value={500} suffix="+" />
-          <StatCard icon={<MapPinIcon className="text-primary size-8" />} title={`Communes Desservies`} value={50} suffix="+" />
-          <StatCard icon={<LeafIcon className="text-primary size-8" />} title={`Tonnes de CO2 Économisées`} value={1000} suffix="+" />
+          <StatCard icon={<UsersIcon className="text-primary size-8" />} title={`Usagers`} value={23_000} suffix="+" />
+          <StatCard icon={<BikeIcon className="text-primary size-8" />} title={`Stations`} value={5} suffix="+" />
+          <StatCard icon={<MapPinIcon className="text-primary size-8" />} title={`Communes Desservies`} value={40} suffix="+" />
         </div>
       </div>
     </section>
