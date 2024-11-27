@@ -11,18 +11,19 @@ type Location = {
 };
 
 export function MapComponent() {
-  const [center, setCenter] = useState<[number, number]>([44.44859854664816, 1.4418475339827923]); // Centered on Cahors by default
+  const [center, setCenter] = useState<[number, number]>([44.445697739748944, 1.441751999891954]); // Centered on Cahors by default
   const [zoom, setZoom] = useState<number>(12);
   const { coordinates: userLocation, error, loading } = useLocation();
   const RADIUS_KM = 10;
 
   // Define fixed locations for markers
   const locations: Location[] = [
-    { name: "Cahors", coordinates: [44.44859854664816, 1.4418475339827923] },
-    { name: "Flaujac", coordinates: [44.40658584007613, 1.5128992382720814] },
-    { name: "Lamagdelaine", coordinates: [44.47036595086207, 1.4849161866875684] },
-    { name: "Pradines", coordinates: [44.47660877812747, 1.4094272619023345] },
-    { name: "Trespoux", coordinates: [44.41412375845232, 1.3887053517975771] },
+    { name: "Cahors", coordinates: [44.445697739748944, 1.441751999891954] },
+    { name: "Pradines", coordinates: [44.47450297107502, 1.4078354542278497] },
+    { name: "Cahors 1", coordinates: [44.44960765715062, 1.433347457420965] },
+    { name: "Cahors 2", coordinates: [44.46323952807242, 1.4557767891683213] },
+    { name: "Mercuès", coordinates: [44.49706065469613, 1.385863921699686] },
+    { name: "Espère", coordinates: [44.509890294160726, 1.3730486455717652] },
   ];
 
   // Create a circle feature for user's range
