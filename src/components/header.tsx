@@ -15,6 +15,7 @@ export function Header() {
             {`Scoot'Ride`}
           </Link>
           <div className="hidden space-x-4 md:flex">
+            <NavLink href="/prices">{`Nos Tarifs`}</NavLink>
             <NavLink href="/download">{`Télécharger l'application`}</NavLink>
             <NavLink href="/planner">{`Planifier un trajet`}</NavLink>
             <NavLink href="/rewards">{`Programme de fidélité`}</NavLink>
@@ -26,6 +27,9 @@ export function Header() {
       </nav>
       {isMenuOpen && (
         <div className="md:hidden">
+          <NavLink href="/prices" mobile>
+            {`Nos Tarifs`}
+          </NavLink>
           <NavLink href="/download" mobile>
             {`Télécharger l'application`}
           </NavLink>
