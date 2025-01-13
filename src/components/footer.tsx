@@ -50,7 +50,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 text-center text-sm">
-          <p>{`© 2024 Scoot'Ride. Tous droits réservés.`}</p>
+          <p>{`© ${new Date().getFullYear()} Scoot'Ride. Tous droits réservés.`}</p>
           <div className="mt-2">
             <Link href="#" className="hover:text-primary transition-colors">{`Mentions légales`}</Link> |{" "}
             <Link href="#" className="hover:text-primary transition-colors">{`Politique de confidentialité`}</Link> |{" "}
