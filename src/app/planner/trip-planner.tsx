@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 export function TripPlanner() {
-  const [start, setStart] = useState("");
-  const [end, setEnd] = useState("");
+  const [start, setStart] = useState("Pradines");
+  const [end, setEnd] = useState("Espère");
   const [result, setResult] = useState<string | null>(null);
 
   const checkTrip = () => {
-    const distance = Math.random() * 50;
+    const distance = 11.1;
     if (distance <= 30) {
       setResult(`Trajet possible ! Distance estimée : ${distance.toFixed(2)} km.`);
     } else {
